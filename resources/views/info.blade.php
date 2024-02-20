@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-    <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <title>Minecraft-Website</title>
-    
+   @include('infopage.info') 
 </head>
 <body>
     <!--Navbar-->
     <header class="header">
         <nav class="navbar">
-            <a href="#">Wiki</a>
-            <a href="#">Support</a>
+            <a href="{{ route('wiki') }}">Wiki</a>
+            
         </nav>
 
         <a href="#" class="logo"><img src="{{asset('/assets/minecraft-title.png')}}"></a>
         <nav class="navbar">
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#">Test</a>
-            <a href="#">Test</a>
+            <a href="#">Support</a>
         </nav>
         
     </header>
@@ -246,7 +234,7 @@
             
         </section>
 
-
+         <!--Cube-->
         <section class="cube">
             <h2>Einblicke in die Welt</h2>
             <div class="swiper">
@@ -270,7 +258,7 @@
             </div>
         
         </section>
-
+        <!--Ende Cube-->
 
 
         <!--Footer-->

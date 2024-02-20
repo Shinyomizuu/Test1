@@ -15,21 +15,18 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'homepage']);
 
+Route::get('/wiki', function () {
+    return view('wiki'); 
+})->name('wiki');
 
-
-Route::get('/info', function(){
-    return view('info');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->middleware('auth')->name('dashboard');
 
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/home', [HomeController::class,'index']) ->middleware('auth')->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
