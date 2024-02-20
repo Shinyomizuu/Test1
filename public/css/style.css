@@ -1,0 +1,721 @@
+
+:root{
+    --white-color: white;
+    --border-color: #282626 ;
+  }
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+    
+    50%{
+        opacity: 1;
+        transform: translate();
+    }
+    100%{
+        transform: translate();
+    }
+}
+
+@keyframes fadeTop {
+    0% {
+        opacity: 0;
+        transform: translateY(+100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #90b855 !important;
+    overflow-y: hidden;
+    height: 150vh;
+}
+
+
+header{
+    background-color: var(--border-color) !important;
+    top:0;
+    left:0;
+    padding: 0.9rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2,p{
+    animation: fade linear;
+    animation-timeline: view();
+}
+
+/*Navbar*/
+    .navbar a{
+        font-size: 1.0rem;
+        text-decoration: none;  
+        color: white;
+        font-weight: 2px;
+    }
+
+    .logo-link {
+        align-items: center;
+        justify-content: center; 
+    }
+
+    .logo img {
+        margin-left: 3rem;
+        height: 4rem;
+        width: 13rem;
+    }
+/*EndNavbar*/
+
+
+/*Home Section*/
+    .wrapper{
+        height: 88vh;
+        overflow-x: hidden;
+        perspective: 10px;
+    }
+
+    .wrapper::-webkit-scrollbar {
+        width: 1rem ;
+    }
+
+    .wrapper::-webkit-scrollbar-thumb {
+        background-color: var(--white-color) ;
+    }
+
+    .wrapper::-webkit-scrollbar-thumb:hover {
+        background-color: var(--border-color);
+    }
+
+    .wrapper::-webkit-scrollbar-track {
+        background-color: var(--border-color);
+    }
+
+    .home{
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -3;
+    }
+
+    .Fourth_Layer{
+        transform: translateZ(-5px) scale(1.5);
+    }
+
+    .Third_Layer{
+        transform: translateZ(-10px) scale(2.0);
+    }
+
+    .Sun_Layer{
+        transform: translateZ(-9px) scale(1.5);
+    }
+
+    .Second_Layer{
+        transform: translateZ(-5px) scale(1.5);
+    }
+
+    .First_Layer{
+        transform: translateZ(-5px) scale(1.5);
+    }
+
+    .Fourth_Layer,
+    .Sun_Layer,
+    .Third_Layer,
+    .Second_Layer,
+    .First_Layer{
+        position: absolute;
+        height: 100%;
+        width:100vw;
+        object-fit: cover; /* skaliert, ohne das Seitenverhältnis des Bildes zu verzerren*/
+        z-index: -3;
+    }
+/*End Home Section*/
+
+
+/*Pre Layer*/
+    .pre{
+        top: 0%;
+       
+        height:126vh !important;
+        
+    }
+
+    .pre-image{
+        top: 0%;
+        height: 100%;
+        width: 100%;
+    }
+
+/*End Pre Layer*/
+
+
+/*InfoSection*/
+    .info_section .col-md-12{
+        padding: 5%;
+        color: white;
+        font-size: 1.5rem;
+        font-family: 'Common Pixel', sans-serif;
+        background-color: black;
+        
+    } 
+
+
+    .col-md-12{
+        margin: 0;
+        justify-content: center;
+    }
+
+    .col-md-12 h2{
+        font-family: 'Common Pixel', sans-serif;
+        padding-bottom: 0;                                    
+    }
+
+    .info_section .infop{
+        padding-top: 10px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background-color: black;
+    }
+
+
+
+    .container-fluid{
+        height: 200vh;
+        margin: 0;
+        background-color: black;
+        
+    }
+
+    .card-container{
+        display: flex;
+        justify-content: center;
+
+    }
+    .carousel-item img{
+        height: 70%;
+    }
+
+    .carousel-caption h5{
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+    .carousel-caption p{
+        padding: 0;
+        margin:0;
+        font-size: 1rem;
+        animation: none;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+
+    .carousel-indicators{
+        top: 75%;
+    
+    }
+
+    .carousel-indicators img{
+        width: 100px;
+        display: block;
+    }
+    .carousel-indicators button{
+        width: max-content !important; /*  legt die maximale Breite eines Elements auf die intrinsische Breite des Inhalts fest*/
+    }
+    .carousel-indicators{
+        position: unset;  /*Setzt Position unter dem Bild*/
+    }
+
+
+    .carousel-indicators button.active img{
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+/*End Info Section*/
+
+/*Player Layer*/
+
+    .player-layer{
+        height: 80vh;
+        background-color: white;
+    }
+
+    .player-layer h2{
+        padding-top: 0% ;
+        font-size: 3rem;
+    }
+    .c-img{
+        padding-top: 20%;
+        padding-bottom: 0;
+        padding-right: 100px;
+        padding-left: 100px;
+        height:600px;
+    
+    }
+
+    .card img{
+        max-height: 250px;
+        min-height: 130px;
+        width: 100% !important;
+    
+    }
+    .card:hover img {
+        transform: scale(1.2);
+        transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+
+    .container .card{
+        border: none;
+        padding-top: 10%;
+    }
+
+    .card-body h5{
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+    .card-body p{
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+/*End Player Layer*/
+
+/*World Gallery*/
+
+    .world-gallery .c-img{
+        padding: 5%;
+        background-color: black;
+    }
+
+
+    .world-2{
+        height: 100vh;
+    }
+  
+/* End World Gallery*/
+
+
+.platformen .col-md-12 p{
+
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.platformen{
+    padding: 10%;
+    height: 100vh;
+    background-color: black;
+}
+.platformen .col-md-12 h2{
+    font-size: 2rem;
+    color: white;
+}
+.platformen p{
+    color:white;
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+}
+
+.platformen h2{
+    padding-bottom: 20px;
+}
+
+.platformen .col-md-4 h5{
+    font-size: 1.5rem;
+}
+.platformen .col-md-4{
+    justify-content: center;
+    color: white;
+}
+.platform-item {
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.platform-item::before,
+.platform-item::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #ffffff; 
+    transition: width 0.3s ease-in-out;
+}
+
+.platform-item::before {
+    top: 0;
+    left: 0;
+    width: 50%; /* Länge der Linie von links */
+}
+
+.platform-item::after {
+    top: 0;
+    right: 0;
+    width: 50%; /* Länge der Linie von rechts */
+}
+
+.platform-item:hover::before,
+.platform-item:hover::after {
+    width: 0; /* Verkürzt die Linien bei Hover */
+}
+
+.platform-item:hover {
+    transform: scale(1.25);
+}
+
+
+
+.platform-item i {
+   padding-right: 5px;
+   padding-bottom: 2px;
+}
+
+
+.world-gallery{
+    padding-bottom: 0;
+    height: 100vh;
+    background-color: black;
+
+}
+
+
+/*Cube*/
+.cube{
+    height: 150vh;
+    background-color: black;
+    padding: 150px;
+    text-align: center;
+}
+
+.cube h2{
+    font-size: 2rem;
+    padding-bottom: 29px;
+    color: white;
+    font-family: 'Common Pixel', sans-serif;
+}
+
+.swiper{
+    height: 80%;
+
+}
+
+.swiper-pic1{
+    background-image: url(/assets/normalMc.png);
+    background-size: contain; /* Das Bild wird kleiner skaliert, um in den Bereich zu passen */
+    background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbildes */
+    background-position: center; /* Zentriert das Hintergrundbild */
+}
+
+.swiper-pic2{
+    background-image: url(/assets/shader1.jpg);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+.swiper-pic3{
+    background-image: url(/assets/shader2.jpg);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+.swiper-pic4{
+    background-image: url(/assets/shader3.jpg);
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+
+.swiper-slide{
+    background-color: grey;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 20px;
+}
+
+/*End Cube*/
+.last-prelayer{
+    height: 30vh;
+    background-color: black;
+}
+
+
+
+
+
+.foot{  
+    height: 80vh;
+    background-color: var(--border-color);
+}
+
+.foot .container-fluid{
+    padding-top: 10%;
+    height: 100vh;
+    background-color: var(--border-color);
+}
+
+.foot .col-md-4 img{
+    height:120px;
+}
+
+.foot .col-md-4, .col-md-12 h6{
+    color:white;
+    font-size: 1.4rem;
+}
+.foot .col-md-4 p{
+    color: rgb(255, 255, 255) !important;
+    font-size: 1rem;
+}
+
+.btn-social {
+    background-color: white;
+   
+}
+@media only screen and (max-width: 768px)  and (max-width: 1024px) {
+
+    .nav-links {
+        margin-top: 10px; 
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .home {
+        height: 50vh; /*nicht ändern, ist den asset angepasst*/
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        z-index: -1;
+    }
+
+
+    .pre-image{
+        width:auto;
+        top:0%;
+    }
+
+    .info_section{
+        height: 100vh;
+        
+    }
+    
+    .wrapper{
+        height: 100vh;
+    }
+
+    .Sun_Layer{
+        height: 90%; 
+        width: 110%;
+        
+    }
+
+    .logo {
+        align-items:center;
+    }
+
+    .logo img{
+        margin-left: 0;
+        height: 2rem;
+        width: 7rem;
+    }
+
+    .Fourth_Layer,
+    .Third_Layer,
+    .Sun_Layer,
+    .Second_Layer,
+    .First_Layer {
+        max-width: 80%; /* Breite auf 100% setzen */
+        
+    }
+        
+    .Fourth_Layer{
+        transform: translateZ(-1px) scale(1.5);
+    }
+
+    .Third_Layer{
+        transform: translateZ(-5px) scale(2.5);
+    }
+
+    .Sun_Layer{
+        transform: translateZ(-3px) scale(1.5);
+    }
+    
+    .Second_Layer{
+        transform: translateZ(-1.5px) scale(1.5);
+    }
+    
+    .First_Layer{
+        transform: translateZ(-1.5px) scale(1.5);
+    }
+    .Sun_Layer{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .info_section .infop{
+        font-size: 10px;
+    }
+
+    .info_section .col-md-12 h2 {
+        font-size: 2rem;
+    }
+
+    .info_section .col-md-12 p{
+        font-size: 1rem;
+    }
+    
+    .container-fluid{
+        top:0;
+        height: 140vh;
+       
+    }
+
+    .c-img{
+        padding: 150px;
+        height: auto;
+        min-height: 300px;
+        min-width: 30px;
+        max-width: 800px;
+    
+        width: 100%;
+        padding-left:0;
+        padding-right:0 ;
+   
+    }
+
+    .carousel-caption{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: 100%; 
+       
+    }
+   
+    
+    .carousel-caption h5{
+        margin-top: 300px;
+        font-weight: 800px;
+        font-size: 1rem;
+        padding-bottom: 20px;
+    }
+
+    .carousel-caption p{
+        margin-top: 10px;
+        font-size: 0.7rem;
+    }
+
+    .carousel-indicators{
+        top: 80%;
+       
+    }
+
+   
+    .container .card{
+        border: none!important;
+        display:flex;
+        align-items: center;
+        
+        
+    }
+
+    .card img{
+        max-width: 50%;
+        height: 100px;
+        max-height: 400px;
+    
+    }
+
+    .player-layer .row{
+        padding-top: 550px;
+        
+    }
+
+    .player-layer .card{
+        height: 300px;
+        width: 100%;
+       
+    }
+    
+    .player-layer{
+        height: 250vh;
+    }
+
+    .world-gallery {
+        height: 70vh;
+      
+    }
+ 
+
+    .platformen{
+        height: 100vh;
+       
+    }
+
+    .platformen .col-md-12 p{
+        font-size: 1.2rem;
+    }
+
+    .cube{
+        width: 100%;
+        padding:30px;
+    }
+
+    .cube h2{
+        padding-top: 3rem;
+        font-size: 1.5rem;
+        font-family: 'Common Pixel', sans-serif;
+    }
+    
+    .world-gallery .c-img{
+        padding-top: 30px;
+        padding-bottom: 0;
+        min-height: 300px;
+        min-width: 30px;
+        max-width: 800px;
+    }
+    .last-prelayer{
+        height: 50vh!important;
+        background-color: black;
+    }
+    
+ 
+    .foot{
+        height: 130vh;
+    }
+}
