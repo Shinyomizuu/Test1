@@ -29,8 +29,8 @@
 #wrapper {
   overflow-x: hidden;
   background-image: url("../assets/cherrylandscape.png");
-  background-size: cover; /* Bildgröße anpassen, um den gesamten Bereich abzudecken */
-  background-position: center; /* Bildposition zentrieren */
+  background-size: cover; 
+  background-position: center; 
   
 }
 
