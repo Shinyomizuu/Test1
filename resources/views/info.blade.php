@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   @include('infopage.info') 
+   @include('infopage.info')
+   
 </head>
 <body>
     <!--Navbar-->
     <header class="header">
         <nav class="navbar">
             <a href="{{ route('wiki') }}">Wiki</a>
-            
         </nav>
 
         <a href="#" class="logo"><img src="{{asset('/assets/minecraft-title.png')}}"></a>
@@ -20,7 +20,7 @@
     <!--End Navbar-->
 
     <!--Section Paralax Effect-->
-    <div class= "wrapper" > 
+    <div class= "wrapper"> 
 
         <!--Home (Paralax)-->
         <section class="home">

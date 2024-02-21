@@ -28,14 +28,10 @@
 
 #wrapper {
   overflow-x: hidden;
-  background-image: linear-gradient(
-    to right,
-    #aed9e0,
-    #b6dbe7,
-    #bfddf0,
-    #c8e0f6,
-    #d1e3fc
-  );
+  background-image: url("../assets/cherrylandscape.png");
+  background-size: cover; /* Bildgröße anpassen, um den gesamten Bereich abzudecken */
+  background-position: center; /* Bildposition zentrieren */
+  
 }
 
 #sidebar-wrapper {

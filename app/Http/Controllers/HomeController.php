@@ -15,7 +15,7 @@ class HomeController extends Controller
             return view('admin.dashboard');
         }
         elseif ($usertyp =='user'){
-            return view('user.dashboard');
+            return view('wiki');
         }
         else{
             return redirect()->back();

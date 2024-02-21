@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
    
-    <title>Admin Dashboard</title>
+    <title>Wiki</title>
+
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">Wiki
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">Wikimedia  
         </div>
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" ></a>
@@ -32,11 +33,11 @@
         <!-- Ende Sidebar -->
 
         <!-- Seite -->
-        <div id="page-content-wrapper">
+        <div id="page-content-wrapper" stlye="background-image: url ('{{asset('/assets/minecraft-title.png')}}')">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
+                    <h2 class="fs-2 m-3">ITEMS</h2>
                 </div>
 
                 <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
@@ -48,10 +49,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown ">
+
+                            @if (Route::has('login'))
+
+                            @auth
+                            <x-app-layout>
+                            </x-app-layout>
+
+                            @else
                             <button><a href="{{route('login')}}">Login</button></a>
                             <button><a href="{{route('register')}}">Register</button></a>    
-                        </li>
+                            @endif
 
+                            @endauth
+                        </li>
                     </ul>
                 </div>
             </nav>
