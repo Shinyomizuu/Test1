@@ -36,7 +36,7 @@
         <div id="page-content-wrapper" stlye="background-image: url ('{{asset('/assets/minecraft-title.png')}}')">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <i class="fas fa-align-left fs-4 me-3" id="menu-toggle"></i>
                     <h2 class="fs-2 m-3">ITEMS</h2>
                 </div>
 
@@ -67,41 +67,6 @@
                 </div>
             </nav>
 
-            <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
-                    <div class="col-md-4 ">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">-</h3>
-                                <p class="fs-5">Benutzer</p>
-                            </div>
-                            <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">-</h3>
-                                <p class="fs-5">Gäste</p>
-                            </div>
-                            <i class="fas fa-solid fa-beer-mug-empty fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-            
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">-</h3>
-                                <p class="fs-5">Einträge</p>
-                            </div>
-                            <i class="fas fa-solid fa-note-sticky fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
     <!-- Ende der Seite-->
