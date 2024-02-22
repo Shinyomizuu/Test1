@@ -8,7 +8,7 @@
             <h1 class="text-center mb-4">Block erstellen</h1>
             <div class="form-container">
                 <form action="{{url('add_post')}}" method="POST" enctype="multipart/form-data">
-                    @csrf   <!--Cross Site request Forgery sendet CSRF Token-Feld für Sicherheit vor Angreifer-->
+                    @csrf   <!--Cross Site request Forgery sendet CSRF Token-Feld für Sicherheit vor Angreifern-->
                     <div class="mb-3">
                         <label for="title" class="form-label">Name:</label>
                         <input type="text" class="form-control" id="item_name" name="item_name">
