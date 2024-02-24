@@ -17,6 +17,8 @@
             @include ('admin.nav')
 
             @include ('admin.form_evaluation')
+
+
         </div>
 
        
@@ -33,6 +35,15 @@
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var closeButton = document.querySelectorAll(".close");
+            closeButton.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    this.parentElement.style.display = "none";
+                });
+            });
+        });
     </script>
 </body>
 

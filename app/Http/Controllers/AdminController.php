@@ -58,4 +58,18 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Block wurde erfolgreich erstellt');
         return redirect()->back();
     }
+
+    public function show_page()
+    {
+
+        $post = Post::all(); // nimmt alle daten von der Postdb
+        return view('admin.show_page', compact('post')); //sendet alle Daten von post in die View
+    }
+
+    public function post_delete($id) //übergebene ID
+    {
+        $post = Post::find($id); // findet in den Post daten ob die Id übereinstimmt
+        $post->delete();
+        return redirect()->back()->with('message', 'Wurde erfolgreich gelöscht');
+    }
 }

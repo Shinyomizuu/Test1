@@ -4,7 +4,7 @@
             <div class="list-group list-group-flush my-3">
                 <a href="" class="list-group-item list-group-item-action bg-transparent second-text active" ></a>
                 <a href="{{url('post_page')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Block Erstellen</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
+                <a href="{{url('show_page')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Blocks anzeigen</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
