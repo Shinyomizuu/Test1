@@ -108,8 +108,12 @@
                             <td class="text-center">
                                 <img class="recipe_design" src="recipes/{{$post->recipe}}">
                             </td>
+
                             <td>
-                                <!--Post übergeben-->
+                                <a href="{{url('edit_post', $post->id)}}" class="btn btn-success">Bearbeiten</a>
+                            </td>
+                            <td>
+                                <!--post id übergeben-->
                                 <a href="{{url('delete_post', $post->id)}}" class="btn btn-danger" onclick ="confirmation(event)">Löschen</a>
                             </td>
                         </tr>

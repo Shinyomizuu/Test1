@@ -43,3 +43,7 @@ Route::post('/add_post', [AdminController::class,'add_post']);
 Route::get('/show_page', [AdminController::class,'show_page']);
 
 Route::get('/delete_post/{id}', [AdminController::class,'post_delete']);
+
+Route::get('/edit_post/{id}', [AdminController::class,'edit_post']);
+
+Route::post('/update_post/{id}', [AdminController::class,'update_post']);

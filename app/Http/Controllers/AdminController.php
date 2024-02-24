@@ -72,4 +72,54 @@ class AdminController extends Controller
         $post->delete();
         return redirect()->back()->with('message', 'Wurde erfolgreich gelöscht');
     }
+
+    public function edit_post($id) //übergebene ID
+    {
+        $post = Post::find($id);
+
+        return view('admin.edit_post', compact('post'));
+    }
+
+    
+    public function update_post(Request $request, $id) 
+    {
+        // Post-Instanz anhand der ID aus der Datenbank abrufen
+    $post = Post::find($id);
+    
+    // Aktualisieren der Felder des Posts basierend auf den Formulardaten
+    $post->item_name = $request->item_name;
+    $post->mc_item_type = $request->mc_item_type;
+    $post->description = $request->description;
+    
+    // Überprüfen, ob ein neues Icon hochgeladen wurde
+    if ($request->hasFile('icon')) {
+        // Wenn ja, das hochgeladene Icon erhalten
+        $icon = $request->file('icon');
+        // Einen eindeutigen Dateinamen generieren, um Konflikte zu vermeiden
+        $iconname = time().'.'.$icon->getClientOriginalExtension();
+        // Das Icon in das Verzeichnis "icons" verschieben
+        $icon->move('icons', $iconname);
+        // Den Dateinamen des Icons in der Datenbank speichern
+        $post->icon = $iconname;
+    }
+
+
+    if ($request->hasFile('recipe')) {
+
+        $recipe = $request->file('recipe');
+
+        $recipename = time().'.'.$recipe->getClientOriginalExtension();
+
+        $recipe->move('recipes', $recipename);
+    
+        $post->recipe = $recipename;
+    }
+
+    // Die aktualisierten Daten des Posts in der Datenbank speichern
+    $post->save();
+
+ 
+    return redirect()->back() -> with('message','Block wurde erfolgreich bearbeitet !');
+    }
+    
 }
