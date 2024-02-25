@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 use app\models\User;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Post;
+
 class HomeController extends Controller
 {
+
+    //wiki
     public function index()
     {  
         $usertyp = Auth() -> user() -> usertyp;
@@ -20,6 +24,13 @@ class HomeController extends Controller
         else{
             return redirect()->back();
         }
+    }
+
+    public function wikihome()
+    {
+        $post = Post::all();
+
+        return view('wiki', compact('post'));
     }
 
     public function homepage()

@@ -17,10 +17,8 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class,'homepage']);
 
-Route::get('/wiki', function () {
-    return view('wiki'); 
-})->name('wiki');
 
+Route::get('/wiki', [HomeController::class,'wikihome'])->name('wiki');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
