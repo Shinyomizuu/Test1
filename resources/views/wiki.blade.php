@@ -11,8 +11,7 @@
     <title>Wiki</title>
 
     <style>
-        /* Hintergrundbild für die Karte festlegen */
-        
+    
 
         .col-sm-1{
             min-height: 100px;
@@ -67,17 +66,16 @@
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">Wikimedia  
+        <div class="sidebar-wrapper white-text " id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 fs-4 fw-bold text-uppercase border-bottom ">Wikimedia  
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" ></a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"></a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Platzhalter</a>
-                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                <div class="list-group-item list-group-item-action bg-transparent active " ></div>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"></a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
             </a>
             </div>
         </div>
@@ -87,19 +85,19 @@
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-3">ITEMS</h2>
+                    <i class="fas fa-align-left fs-4 me-3 white-text" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-3 white-text">ITEMS</h2>
                 </div>
 
                 <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown ">
+                        <li class="nav-item">
 
                             @if (Route::has('login'))
 
@@ -108,8 +106,8 @@
                             </x-app-layout>
 
                             @else
-                            <button><a href="{{route('login')}}">Login</button></a>
-                            <button><a href="{{route('register')}}">Register</button></a>    
+                            <button type="button" class="btn btn-light "><a href="{{route('login')}}">Login</button></a>
+                            <button type="button" class="btn btn-light"><a href="{{route('register')}}">Register</button></a>    
                             @endif
 
                             @endauth

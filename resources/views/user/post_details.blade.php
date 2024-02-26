@@ -12,7 +12,7 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 200px; /* Breite der Sidebar */
+            width: 250px; 
             background-color: #f8f9fa; 
             padding-top: 20px; /* Platz oben in der Sidebar */
             display: flex;
@@ -23,6 +23,10 @@
         .col-md-3 img{
             max-height:140px;
             max-width:140px;
+        }
+
+        .col-md-3 button{
+            margin-bottom: 10px;
         }
 
       
@@ -106,6 +110,7 @@
                 <button onclick="toggleDarkMode()">Dark Mode</button> <!-- Dark Mode Schalter -->
             </div>
 
+        
             <!-- Content -->
             <div class="col-md-9 content">
                 <h1>Item</h1>

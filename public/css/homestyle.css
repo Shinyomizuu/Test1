@@ -1,25 +1,10 @@
-:root {
-  --main-bg-color: rgb(102, 160, 196);
-  --main-text-color: rgb(102, 160, 196);
-  --second-text-color: rgb(102, 160, 196);
-  --second-bg-color: lightskyblue;
-
+.white-text {
+  color: white !important;
+  text-shadow: 2px 2px 4px black; /* Schwarzer Schatten für Text */
 }
 
-.primary-text {
-  color: var(--main-text-color);
-}
-
-.second-text {
-  color: var(--second-text-color);
-}
-
-.primary-bg {
-  background-color: var(--main-bg-color);
-}
-
-.secondary-bg {
-  background-color: var(--second-bg-color);
+.white-toggler:hover {
+  color: black;
 }
 
 .rounded-full {
@@ -31,13 +16,15 @@
   background-image: url("../assets/cherrylandscape.png");
   background-size: cover; 
   background-position: center; 
-  
 }
+
 
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
   transition: margin 0.25s ease-out;
+  background-color: transparent !important;
+  backdrop-filter:blur(10px);
 }
 
 
@@ -60,10 +47,23 @@
 }
 
 .list-group-item.active {
-  background-color: transparent;
-  color: var(--main-text-color);
   font-weight: bold;
   border: none;
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.btn-light{
+  background-color: transparent !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.btn-light a.white-text {
+  color: white !important;
 }
 
 @media (min-width: 768px) {
