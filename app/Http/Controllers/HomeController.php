@@ -15,11 +15,13 @@ class HomeController extends Controller
     public function index()
     {  
         $usertyp = Auth() -> user() -> usertyp;
+        $post = Post::all();
+
         if($usertyp =='admin'){
             return view('admin_dashboard');
         }
         elseif ($usertyp =='user'){
-            return view('wiki');
+            return view('wiki', compact('post'));
         }
         else{
             return redirect()->back();
@@ -36,5 +38,11 @@ class HomeController extends Controller
     public function homepage()
     {
         return view('info');
+    }
+
+    public function post_details($id)
+    {   
+        $post = POST::find($id);
+        return view('user.post_details', compact('post'));
     }
 }

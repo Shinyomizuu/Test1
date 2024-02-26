@@ -120,10 +120,11 @@
             
             <div class="row">
             @foreach($post as $post)
-                <div class="col-sm-1"  style="background-image: url('/icons/{{$post->icon}}')" >       
+                <div class="col-sm-1"  style="background-image: url('/icons/{{$post->icon}}')" ><a href="{{url('post_details', $post->id)}}">
                     <div class="overlay">
                         <p>{{$post->item_name}}</p>
-                    </div>        
+                    </div>
+                    </a>        
                 </div>
             @endforeach
             </div>

@@ -152,7 +152,7 @@
                     <input type="file" id="recipe" name="recipe">
                 </div>
                 <div class="text-center">
-                    <button type="submit">Beitrag erstellen</button>    
+                    <button type="submit">Beitrag überarbeiten</button>    
                 </div>
             </form>
         </div>
