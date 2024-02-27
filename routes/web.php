@@ -47,3 +47,13 @@ Route::get('/edit_post/{id}', [AdminController::class,'edit_post']);
 Route::post('/update_post/{id}', [AdminController::class,'update_post']);
 
 Route::get('/post_details/{id}', [HomeController::class,'post_details']);
+
+Route::get('/create_post', [HomeController::class,'create_post'])->middleware('auth');
+
+Route::post('/user_post', [HomeController::class,'user_post']);
+
+Route::get('/my_post', [HomeController::class,'my_post'])->middleware('auth');
+
+Route::get('/post_details_user/{id}', [HomeController::class,'post_details_user']) ->middleware('auth');
+
+Route::get('/my_pos_del/{id}', [HomeController::class,'my_pos_del']) ->middleware('auth');

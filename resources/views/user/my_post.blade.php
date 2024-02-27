@@ -72,6 +72,7 @@
                 <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"></a>
                 @if (Route::has('login'))
                     @auth
+                    <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Home</a>
                     <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Meine Blocks</a>
                     <a href="{{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Block erstellen</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
@@ -89,7 +90,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left fs-4 me-3 white-text" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-3 white-text">ITEMS</h2>
+                    <h2 class="fs-2 m-3 white-text">Meine Blocks</h2>
                 </div>
 
                 <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
@@ -119,11 +120,17 @@
                 </div>
             </nav>
 
+            @if(session()-> has('message'))
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                {{session()->get('message')}}
+            </div>
+            @endif
             
-         
+            
             <div class="row">
             @foreach($post as $post)
-                <div class="col-sm-1"  style="background-image: url('/icons/{{$post->icon}}')" ><a href="{{url('post_details', $post->id)}}">
+                <div class="col-sm-1"  style="background-image: url('/icons/{{$post->icon}}')" ><a href="{{url('post_details_user', $post->id)}}">
                     <div class="overlay">
                         <p>{{$post->item_name}}</p>
                     </div>
@@ -139,7 +146,16 @@
     </div>
     
     @include('user.user_java_scripts') 
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var closeButton = document.querySelectorAll(".close");
+            closeButton.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    this.parentElement.style.display = "none";
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
