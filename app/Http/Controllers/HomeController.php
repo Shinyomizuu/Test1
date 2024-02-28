@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {  
         $usertyp = Auth() -> user() -> usertyp;
-        $post = Post::all();
+        $post = Post::where('post_status','=','active')->get();
 
         if($usertyp =='admin'){
             return view('admin_dashboard');
@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function wikihome()
     {
-        $post = Post::all();
+        $post = Post::where('post_status','=','active')->get();
 
         return view('wiki', compact('post'));
     }
@@ -115,4 +115,49 @@ class HomeController extends Controller
     
         return redirect()->back();
     }
+
+    public function user_post_update($id){
+        $post = POST::find($id);
+
+        return view('user.post_update', compact('post'));
+    }
+
+    public function update_user_post (Request $request, $id) {
+        $post = POST::find($id);
+
+        $post-> item_name = $request -> item_name;
+        $post-> mc_item_type = $request -> mc_item_type;
+        $post-> description = $request -> description;
+
+        $icon = $request -> icon;
+
+
+        if ($request->hasFile('icon')) {
+            // Wenn ja, das hochgeladene Icon erhalten
+            $icon = $request->file('icon');
+            // Einen eindeutigen Dateinamen generieren, um Konflikte zu vermeiden
+            $iconname = time().'.'.$icon->getClientOriginalExtension();
+            // Das Icon in das Verzeichnis "icons" verschieben
+            $icon->move('icons', $iconname);
+            // Den Dateinamen des Icons in der Datenbank speichern
+            $post->icon = $iconname;
+        }
+    
+        if ($request->hasFile('recipe')) {
+    
+            $recipe = $request->file('recipe');
+    
+            $recipename = time().'.'.$recipe->getClientOriginalExtension();
+    
+            $recipe->move('recipes', $recipename);
+        
+            $post->recipe = $recipename;
+        }
+    
+        // Die aktualisierten Daten des Posts in der Datenbank speichern
+        $post->save();
+        
+        return redirect()->back()->with('message', 'Post wurde erfolgreich geupdated');
+    }
+    
 }

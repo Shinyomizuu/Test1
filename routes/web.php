@@ -57,3 +57,14 @@ Route::get('/my_post', [HomeController::class,'my_post'])->middleware('auth');
 Route::get('/post_details_user/{id}', [HomeController::class,'post_details_user']) ->middleware('auth');
 
 Route::get('/my_pos_del/{id}', [HomeController::class,'my_pos_del']) ->middleware('auth');
+
+//View
+Route::get('/user_post_update/{id}', [HomeController::class,'user_post_update']) ->middleware('auth');
+
+//Update
+Route::post('/update_user_post/{id}', [HomeController::class,'update_user_post']);
+
+//Admin Accept Reject 
+Route::get('/accept_post/{id}', [AdminController::class,'accept_post']);
+
+Route::get('/reject_post/{id}', [AdminController::class,'reject_post']);

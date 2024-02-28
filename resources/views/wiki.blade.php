@@ -74,9 +74,7 @@
                     @auth
                     <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Meine Blocks</a>
                     <a href="{{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Block erstellen</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
+                  
                     @endauth
                 @endif    
             </a>

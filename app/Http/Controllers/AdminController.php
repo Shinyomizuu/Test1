@@ -121,5 +121,23 @@ class AdminController extends Controller
  
     return redirect()->back() -> with('message','Block wurde erfolgreich bearbeitet !');
     }
+
+    public function accept_post($id){
+        $post = Post::find($id);
+
+        $post -> post_status = 'active';
+        $post->save();
+        
+        return redirect()->back()->with('message', 'Block wurde angenommen');
+    }
+
+    public function reject_post($id){
+        $post = Post::find($id);
+
+        $post -> post_status = 'rejected';
+        $post->save();
+        
+        return redirect()->back()->with('message', 'Block wurde abgelehnt');
+    }
     
 }

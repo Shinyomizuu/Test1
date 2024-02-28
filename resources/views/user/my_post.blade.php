@@ -97,9 +97,6 @@
                     <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Home</a>
                     <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Meine Blocks</a>
                     <a href="{{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Block erstellen</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Platzhalter</a>
                     @endauth
                 @endif    
             </a>
@@ -157,7 +154,7 @@
                         <p>{{$post->item_name}}</p>
                     </div>
                     </a> 
-                    <a href="#1"><i class="fa-solid fa-screwdriver-wrench icon1"></i></a>
+                    <a href="{{url('user_post_update',$post->id)}}"><i class="fa-solid fa-screwdriver-wrench icon1"></i></a>
                     <a href="{{url('my_pos_del',$post->id)}}" ><i class="fa-solid fa-trash icon2"></i></a>
                 </div>
             @endforeach

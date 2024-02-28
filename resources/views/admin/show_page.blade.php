@@ -90,6 +90,8 @@
                             <th>Rezept</th>
                             <th>Bearbeiten</th>
                             <th>Löschen</th>
+                            <th>Post akzeptieren</th>
+                            <th>Post ablehnen</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +117,14 @@
                             <td>
                                 <!--post id übergeben-->
                                 <a href="{{url('delete_post', $post->id)}}" class="btn btn-danger" onclick ="confirmation(event)">Löschen</a>
+                            </td>
+
+                            <td>
+                                <a href="{{url('accept_post', $post->id)}}" class="btn btn-success">Akzeptieren</a>
+                            </td>
+
+                            <td>
+                                <a href="{{url('reject_post', $post->id)}}" class="btn btn-danger">Ablehnen</a>
                             </td>
                         </tr>
                         @endforeach
@@ -150,32 +160,32 @@
 
 
         function confirmation(event){
-    // Stopp Button von der Standardaktion (hier dem Navigieren zur URL)
-    event.preventDefault();
+            // Stopp Button von der Standardaktion (hier dem Navigieren zur URL)
+            event.preventDefault();
 
-    // Holen der URL aus dem Attribut 'href' des angeklickten Links
-    var urlToRedirect = event.currentTarget.getAttribute('href');
+            // Holen der URL aus dem Attribut 'href' des angeklickten Links
+            var urlToRedirect = event.currentTarget.getAttribute('href');
 
-    // Anzeigen des Bestätigungs-Popups mit SweetAlert
-    swal({
-        title: "Sind Sie sicher, dass Sie den Post löschen möchten?", 
-        text: "Sie können diese Aktion nicht rückgängig machen.",
-        icon: "warning", // Ändern von "Achtung" zu "warning"
-        buttons: ["Abbrechen", "OK"],
-        dangerMode: true, 
-        // Timer für automatisches Schließen des Popups nach 5 Sekunden
-        timer: 5000,
-        // Schließen des Popups, wenn der Timer abläuft
-        closeOnTimer: true
-    })
-    .then((willCancel) => {
-        // Wenn der Benutzer "Abbrechen" wählt, wird nichts gemacht
-        // Wenn der Benutzer "OK" wählt, wird die URL aufgerufen, um den Post zu löschen
-        if(willCancel) {
-            window.location.href = urlToRedirect;
+            // Anzeigen des Bestätigungs-Popups mit SweetAlert
+            swal({
+                title: "Sind Sie sicher, dass Sie den Post löschen möchten?", 
+                text: "Sie können diese Aktion nicht rückgängig machen.",
+                icon: "warning", // Ändern von "Achtung" zu "warning"
+                buttons: ["Abbrechen", "OK"],
+                dangerMode: true, 
+                // Timer für automatisches Schließen des Popups nach 5 Sekunden
+                timer: 5000,
+                // Schließen des Popups, wenn der Timer abläuft
+                closeOnTimer: true
+            })
+            .then((willCancel) => {
+                // Wenn der Benutzer "Abbrechen" wählt, wird nichts gemacht
+                // Wenn der Benutzer "OK" wählt, wird die URL aufgerufen, um den Post zu löschen
+                if(willCancel) {
+                    window.location.href = urlToRedirect;
+                }
+            });
         }
-    });
-}
     </script>
 </body>
 
