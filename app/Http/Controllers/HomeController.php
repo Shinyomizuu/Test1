@@ -113,15 +113,6 @@ class HomeController extends Controller
         $post_del= POST::find($id);
         $post_del->delete();
     
-        // Nachricht für die Weiterleitung vorbereiten
-        $message = 'Block wurde erfolgreich gelöscht';
-    
-        // Benutzerdaten für die Ansicht "my_post" vorbereiten
-        $user = Auth::user();
-        $user_id = $user->id;
-        $post = POST::where('user_id','=',$user_id)->get();
-    
-        // Weiterleitung zur my_post Ansicht mit Nachricht
-        return view('user.my_post', compact('post'))->with('message', $message);
+        return redirect()->back();
     }
 }

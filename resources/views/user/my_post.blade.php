@@ -22,7 +22,27 @@
             position: relative; /* Relative Position für Overlay */
             transition: transform 0.3s ease; /* Übergangseffekt für Transform */
         }
-        
+    
+        .col-sm-1 .icon1 {
+            padding-top:10px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0); /* Standardmäßig unsichtbar */
+            transition: color 0.3s ease; /* Übergangseffekt */
+        }
+        .col-sm-1:hover .icon1 {
+            color: #FFD43B; /* Bei Hover sichtbar machen */
+        }
+
+        .col-sm-1 .icon2 {
+            padding-top:10px;
+            margin-left:25px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0); /* Standardmäßig unsichtbar */
+            transition: color 0.3s ease; /* Übergangseffekt */
+        }
+        .col-sm-1:hover .icon2 {
+            color: #FF0000; /* Bei Hover sichtbar machen */
+        }
         .overlay {
             position: absolute;
             bottom: 0;
@@ -48,6 +68,8 @@
         .col-sm-1:hover .overlay {
             opacity: 1; /* Bei Hover undurchsichtig machen */
         }
+
+    
 
         @keyframes bounce {
             0% {
@@ -134,7 +156,9 @@
                     <div class="overlay">
                         <p>{{$post->item_name}}</p>
                     </div>
-                    </a>        
+                    </a> 
+                    <a href="#1"><i class="fa-solid fa-screwdriver-wrench icon1"></i></a>
+                    <a href="{{url('my_pos_del',$post->id)}}" ><i class="fa-solid fa-trash icon2"></i></a>
                 </div>
             @endforeach
             </div>

@@ -18,7 +18,7 @@
             border-radius: 25px;
             background-size: cover; /* Das Hintergrundbild wird skaliert, um den gesamten verfügbaren Platz auszufüllen */
             background-position: center; /* Das Hintergrundbild wird zentriert */
-            margin-left:20px;
+            margin:20px;
             position: relative; /* Relative Position für Overlay */
             transition: transform 0.3s ease; /* Übergangseffekt für Transform */
         }

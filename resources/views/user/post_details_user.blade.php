@@ -113,7 +113,7 @@
         
             <!-- Content -->
             <div class="col-md-9 content">
-                <h1>Item</h1>
+                <h1>{{$post->item_name}} von {{$post->name}}</h1>
                 <hr>
                 <p>Hier finden Sie Informationen zu den Blöcken/Gegenstände/Item-Typen. Beachten Sie dabei, dass dort nur die wichtigsten Informationen
                     stehen die Sie für das Minecraft spielen gebrauchen könnten. Es werden Ihnen auch notwendige Rezepte angezeigt, die Sie für das Craften von Gegenstände / Blöcke gebrauchen werden.
@@ -178,12 +178,7 @@
                         
                     </div>
                 </div>
-
-                <a onclick="return confirm('Sie Sie sich sicher, dass Sie den Block löschen möchten?')" href="{{url('my_pos_del',$post->id)}}"> 
-                    <div class="row">
-                        <button class="btn btn-danger">Löschen</button>
-                    </div>
-                 </a>
+                
             </div>
         </div>
     </div>

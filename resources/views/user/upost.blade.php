@@ -71,16 +71,16 @@
                 </div>
             </nav>
             <div class="container">
-                <div class="border border-dark shadow p-4 rounded mx-auto" style="max-width: 700px; background-image: url('../assets/stonebg.jpg');">
+                <div class="border border-white shadow p-4 rounded mx-auto" style="max-width: 700px; background-color:transparent; backdrop-filter:blur(20px);">
                      @if(session()-> has('message'))
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{session()->get('message')}}
                         </div>
                         @endif
-                    <h1 class="text-center mb-4 fs-2" style="font-weight: bold; color: white; text-shadow: 2px 2px 4px black;">Block erstellen</h1>
+                    <h1 class="text-center mb-4 fs-2" style="font-weight: bold; color: white; text-shadow: 2px 2px 4px black; font-weight:700;">Block erstellen</h1>
                     <div class="form-container">
-                        
+
                         <!--Form-->
                         <form action="{{url('user_post')}}" method="POST" enctype="multipart/form-data">
                             @csrf   <!--Cross Site request Forgery sendet CSRF Token-Feld für Sicherheit vor Angreifern-->
