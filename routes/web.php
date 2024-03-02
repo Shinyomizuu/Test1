@@ -68,3 +68,4 @@ Route::post('/update_user_post/{id}', [HomeController::class,'update_user_post']
 Route::get('/accept_post/{id}', [AdminController::class,'accept_post']);
 
 Route::get('/reject_post/{id}', [AdminController::class,'reject_post']);
+Route::get('/wiki/search', [HomeController::class, 'search'])->name('wiki.search');

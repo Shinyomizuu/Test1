@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-   
-    <title>Block bearbeiten</title>
+    <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
 
+    <title>Block bearbeiten</title>
+   
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             <div class="list-group list-group-flush my-3">
                 <div class="list-group-item list-group-item-action bg-transparent active " ></div>
                 <a href="" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"></a>
-                <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Home</a>
+                <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"><i class="fa-solid fa-house" style="margin-right:10px"></i>Home</a>
                 @if (Route::has('login'))
                     @auth
                         <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Meine Blocks</a>
@@ -76,7 +76,7 @@
                             {{session()->get('message')}}
                         </div>
                     @endif
-                    
+
                     <h1 class="text-center mb-4 fs-2" style="font-weight: bold; color: white; text-shadow: 2px 2px 4px black; font-weight:700;">Block bearbeiten</h1>
                     <div class="form-container">
 

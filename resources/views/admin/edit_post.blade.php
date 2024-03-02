@@ -23,7 +23,7 @@
         label {
             font-weight: bold;
             color: white;
-            text-shadow: 2px 2px 4px black;
+
             margin-bottom: 5px;
             display: block;
         }
@@ -44,7 +44,7 @@
         h2 {
             font-weight: bold;
             color: white; /* Textfarbe */
-            text-shadow: 2px 2px 4px black; /* Textschatten */
+        
             margin-bottom: 20px; /* Abstand nach unten */
             text-align: center; /* Zentrierte Ausrichtung */
         }
@@ -57,7 +57,7 @@
             border: none;
             border-radius: 5px;
             background-color: #666; /* Hintergrundfarbe des Beschreibungsfeldes */
-            color: #fff; /* Textfarbe des Beschreibungsfeldes */
+    
             font-size: 16px;
             resize: vertical; /* Erlaubt vertikales Scrollen, wenn der Textbereich zu groß ist */
             min-height: 100px; /* Mindesthöhe des Textbereichs */
@@ -119,10 +119,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="mc_item_type">Item-Typ:</label>
-                    <select id="mc_item_type" name="mc_item_type" class="form-select" value="{{$post->mc_item_type}}">
-                        <option value="blocks">Block</option>
-                        <option value="tools">Gegenstand</option>
-                        <option value="objects">Objekt</option>
+                    <select id="mc_item_type" name="mc_item_type" class="form-select">
+                            <option value="blocks"  @if($post->mc_item_type == 'blocks') selected @endif>Block</option>
+                            <option value="tools"  @if($post->mc_item_type == 'tools') selected @endif>Gegenstand</option>
+                            <option value="objects"  @if($post->mc_item_type == 'objects') selected @endif>Objekt</option>
                     </select>
                 </div>
                 <div class="mb-3">
@@ -152,7 +152,7 @@
                     <input type="file" id="recipe" name="recipe">
                 </div>
                 <div class="text-center">
-                    <button type="submit">Beitrag überarbeiten</button>    
+                    <button type="submit">Beitrag </button>    
                 </div>
             </form>
         </div>

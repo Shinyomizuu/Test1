@@ -8,12 +8,14 @@
     <!--Navbar-->
     <header class="header">
         <nav class="navbar">
-            <a href="{{ route('wiki') }}">Wiki</a>
+        <a href="{{ route('wiki') }}" class="btn btn-success">
+            <button type="button" class="btn btn-link text-white">Wiki<i class="fa-solid fa-globe ms-2"></i></button>
+        </a>
         </nav>
 
-        <a href="#" class="logo"><img src="{{asset('/assets/minecraft-title.png')}}"></a>
+        <img src="{{asset('/assets/minecraft-title.png')}}" class="logo">
         <nav class="navbar">
-            <a href="#">Support</a>
+            
         </nav>
         
     </header>

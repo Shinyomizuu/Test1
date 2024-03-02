@@ -14,6 +14,7 @@ class HomeController extends Controller
     //wiki
     public function index()
     {  
+        //nur Post die angenommen worden sind werden angezeigt.
         $usertyp = Auth() -> user() -> usertyp;
         $post = Post::where('post_status','=','active')->get();
 
@@ -160,4 +161,16 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'Post wurde erfolgreich geupdated');
     }
     
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        // Suchanfrage nur für autorisierte Benutzer
+        $post = Post::where('item_name', 'LIKE', "%$search%")
+                    ->where('post_status', 'active')
+                    ->get();
+
+        return view('wiki', compact('post'));
+    }
+
 }
