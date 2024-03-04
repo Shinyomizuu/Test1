@@ -121,7 +121,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left fs-4 me-3 white-text" id="menu-toggle"  data-aos="fade-right" data-aos-delay="100"></i>
-                    <h2 class="fs-2 m-3 white-text" data-aos="fade-right" data-aos-delay="100">ITEMS</h2>
+                    <h2 class="fs-2 m-3 white-text" data-aos="fade-right" data-aos-delay="100">Home</h2>
                 </div>
 
                 <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
@@ -161,6 +161,8 @@
          
 
             <div class="row">   
+                
+            <!--Icons design-->    
             @foreach($post as $post)
                 <div class="col-sm-1" data-aos="zoom-in" data-aos-delay="500" style="background-image: url('/icons/{{$post->icon}}')" ><a href="{{url('post_details', $post->id)}}">
                     <div class="overlay">

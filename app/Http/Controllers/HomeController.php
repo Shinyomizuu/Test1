@@ -30,9 +30,10 @@ class HomeController extends Controller
     }
 
     public function wikihome()
-    {
-        $post = Post::where('post_status','=','active')->get();
+    {   
+        //alle post nehmen wo der admin zugesagt hat 
 
+        $post = Post::where('post_status','=','active')->get();
         return view('wiki', compact('post'));
     }
 
@@ -52,7 +53,7 @@ class HomeController extends Controller
     }
 
     public function user_post(Request $request){
-        $user = Auth()->user(); //speichert Userdaten in der variabel
+        $user = Auth()->user(); //aktuell angemeldeter user 
         $user_id = $user->id;
         $user_name = $user->name;
         $user_type = $user-> usertyp;
@@ -93,7 +94,7 @@ class HomeController extends Controller
         $post -> save();
 
         return redirect()->back()->with('message','Block wurde erfolgreich erstellt');
-        return redirect()->back();
+      
     }
 
     public function my_post(){

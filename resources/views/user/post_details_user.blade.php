@@ -147,6 +147,11 @@
                                     <td>Blocker: </td>
                                     <td>{{$post->name}}</td>
                                 </tr>
+                                
+                                <tr>
+                                    <td>Status: </td>
+                                    <td>{{$post->post_status}}</td>
+                                </tr>
                                
                                 <tr>
                                     <td>Erstellungsdatum: </td>

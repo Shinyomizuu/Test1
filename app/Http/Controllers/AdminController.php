@@ -56,7 +56,7 @@ class AdminController extends Controller
         $post -> save();
 
         return redirect()->back()->with('message','Block wurde erfolgreich erstellt');
-        return redirect()->back();
+      
     }
 
     public function show_page()

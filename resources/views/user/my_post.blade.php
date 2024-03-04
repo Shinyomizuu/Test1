@@ -12,7 +12,13 @@
     <title>Wiki</title>
 
     <style>
-
+        
+        #wrapper{
+            overflow-x: hidden;
+            background-image: url("../assets/japanese-castle.jpg") !important;
+            background-size: cover; 
+            background-position: center; 
+        }
         .sidebar-heading {
             border-bottom: none; /* Entfernt die untere Linie */
         }
@@ -107,7 +113,7 @@
                     @if (Route::has('login'))
                         @auth
                         <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-house" style="margin-right:10px"></i>Home </a>
-                        <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-address-book" style="margin-right:10px"></i>Meine Blocks</a>
+                        
                         <a href="{{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="300"> <i class="fa-solid fa-book" style="margin-right:10px"></i>Block erstellen</a>
                         @endauth
                     @endif    

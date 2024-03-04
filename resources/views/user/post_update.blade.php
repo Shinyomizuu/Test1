@@ -6,26 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
 
     <title>Block bearbeiten</title>
-   
+    <style>
+         #wrapper{
+            overflow-x: hidden;
+            background-image: url("../assets/japanese-castle.jpg") !important;
+            background-size: cover; 
+            background-position: center; 
+        }
+        .sidebar-heading {
+            border-bottom: none; /* Entfernt die untere Linie */
+        }
+
+        .list-group-item {
+            display: flex;
+            align-items: center; /* Zentriert die Inhalte vertikal */
+            justify-content: flex-start; /* Ausrichtung der Inhalte nach links */
+            border-bottom: none; /* Entfernt die untere Linie */
+        }
+    </style>
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="sidebar-wrapper white-text " id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 fs-4 fw-bold text-uppercase border-bottom ">Wikimedia  
+            <div class="sidebar-heading text-center py-4 fs-4 fw-bold text-uppercase" data-aos="fade-up" data-aos-delay="100">Wikimedia  
             </div>
-            <div class="list-group list-group-flush my-3">
+            <div class="list-group list-group-flush my-3 border-top">
                 <div class="list-group-item list-group-item-action bg-transparent active " ></div>
                 <a href="" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"></a>
-                <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold"><i class="fa-solid fa-house" style="margin-right:10px"></i>Home</a>
+                <a href="{{ route('wiki') }}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-house" style="margin-right:10px"></i>Home</a>
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Meine Blocks</a>
-                        <a href=" {{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold">Block erstellen</a>
+                        <a href="{{url('my_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-address-book" style="margin-right:10px"></i>Meine Blocks</a>
+                        <a href=" {{url('create_post')}}" class="list-group-item list-group-item-action bg-transparent white-text fw-bold" data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-book"style="margin-right:10px"></i>Block erstellen</a>
                 @endauth
                 @endif
             </a>
@@ -37,8 +56,8 @@
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left fs-4 me-3 white-text" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-3 white-text">Block bearbeiten</h2>
+                    <i class="fas fa-align-left fs-4 me-3 white-text" id="menu-toggle" data-aos="fade-right" data-aos-delay="500"   ></i>
+                    <h2 class="fs-2 m-3 white-text" data-aos="fade-right" data-aos-delay="500">Block bearbeiten</h2>
                 </div>
 
                 <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
@@ -68,7 +87,7 @@
                 </div>
             </nav>
             <div class="container">
-                <div class="shadow p-4 rounded mx-auto" style="max-width: 700px; background-color:transparent; backdrop-filter:blur(20px); border: 2px solid white;">
+                <div class="shadow p-4 rounded mx-auto" style="max-width: 700px; background-color:transparent; backdrop-filter:blur(20px); border: 2px solid white;" data-aos="fade-up" data-aos-delay="500">
         
                     @if(session()-> has('message'))
                         <div class="alert alert-success">
@@ -147,7 +166,12 @@
     </div>
     
     @include('user.user_java_scripts') 
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration:700,
+    });
+    </script>
     <script>
           document.addEventListener("DOMContentLoaded", function () {
             var closeButton = document.querySelectorAll(".close");
